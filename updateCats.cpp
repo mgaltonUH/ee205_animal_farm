@@ -41,7 +41,7 @@ const int fixCat (int index){
     return 1;
 }
 
-const int updateCatWeight(int index,float newWeight){
+const int updateCatWeight(int index,Weight newWeight){
 
     if (newWeight > 0) {
         Catstruct_array[index].catweight = newWeight;

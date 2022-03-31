@@ -16,7 +16,8 @@
 #include <string.h>
 #define MAX_CAT_NUM 1024
 #define MAX_CAT_NAME 50
-
+typedef float Weight;
+typedef int NumCats;
 
 
 enum Gender {UNKNOWN_GENDER, MALE, FEMALE};

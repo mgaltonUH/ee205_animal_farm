@@ -37,7 +37,7 @@ int printCat(const int index) {
 
 int printAllCats(){
 
-    for (int i = 0; i < countcat; i++) {
+    for (int  i = 0; i < countcat; i++) {
         printf("cat index = [%u], name = [%s], gender = [%s], breed = [%s], isFixed = [%d], weight = [%f], collar Color 1 = [%s], collar Color 2 = [%s], License = [%llu]\n",
                i, Catstruct_array[i].catname, catGender(Catstruct_array[i].catgender), catBreed(Catstruct_array[i].catbreed), Catstruct_array[i].catfixed,
                Catstruct_array[i].catweight, colorName(Catstruct_array[i].collarColor1), colorName(Catstruct_array[i].collarColor2), Catstruct_array[i].license);

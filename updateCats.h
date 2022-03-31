@@ -17,7 +17,7 @@ extern const int updateCatName(const int index, const char* newName);
 
 extern const int fixCat(const int index);
 
-extern const int updateCatWeight(const int index,const float newWeight);
+extern const int updateCatWeight(const int index,const Weight newWeight);
 
 extern const int updateCatCollar1(const int index, const enum Color newcollarColor1);
 

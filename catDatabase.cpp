@@ -18,9 +18,9 @@ enum Color     collarColor1;
 enum Color     collarColor2;
 unsigned long long   license;
 bool           catfixed;
-float          catweight;
+Weight          catweight;
 
-int            countcat = 0;       //Initializing zero as the starting point
+NumCats            countcat = 0;       //Initializing zero as the starting poNumCats
 
 struct         Catstruct Catstruct_array[MAX_CAT_NAME];
 
