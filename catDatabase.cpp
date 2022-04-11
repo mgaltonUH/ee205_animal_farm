@@ -58,14 +58,15 @@ const char* breedName (const enum Breed catbreed) {
 
 Cat* catObjectHeadPointer = nullptr;
 
-bool validateDatabase(){
-    int validCats = 0;
-    for (Cat *iCat = catObjectHeadPointer; iCat != nullptr; iCat = iCat->next ) {
+bool validateDatabase() {
+    int checkCats = 0;
+    for (Cat *iCat = catObjectHeadPointer; iCat != nullptr; iCat = iCat->next) {
         if (!iCat->validate()) {
             return 0;
         }
     }
-    validCats++;
+    checkCats++;
+    return true;
 }
 
 //const char* colorName (const enum Color color) {

@@ -16,7 +16,9 @@
 #include "catDatabase.h"
 #include "Cat.h"
 #include "addCats.h"
+#include "reportCats.h"
 //#include "updateCats.h"
+
 
 using namespace std;
 
@@ -32,7 +34,7 @@ int main() {
     addCat( new Cat("Trin", FEMALE, MANX, 1.4 )) ;
     addCat( new Cat ("Chili", MALE, SHORTHAIR,1.5  )) ;
 
-    //printAllCats();
+    printAllCats();
     //printf("\n");
     //int kali = findCat( "Kali" ) ;
     //assert (updateCatName( kali, "Chili" )) ;
@@ -45,17 +47,8 @@ int main() {
     //assert (updateCatLicense( kali, 201));
     //assert (printCat( kali ));
 
-    //printAllCats();
+    printAllCats();
     //deleteAllCats();
-    //printAllCats();
+    printAllCats();
 
-    cout<< "Done with Animal Farm 2" << endl;
-    cout <<"\n"
-           "    /\\_____/\\\n"
-           "   /  o   o  \\\n"
-           "  ( ==  ^  == )\n"
-           "   )         (\n"
-           "  (           )\n"
-           " ( (  )   (  ) )\n"
-           "(__(__)___(__)__)\n " << endl;
 }

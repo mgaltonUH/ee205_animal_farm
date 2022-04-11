@@ -13,7 +13,14 @@
 #include "catDatabase.h"
 #include "Cat.h"
 
+
+//int deleteCat() {
+
 //int deleteAllCats() {
-   // countcat = 0;
-  //  return 1;
+   // while(catObjectHeadPointer != nullptr ) {
+      //  deleteCat(catObjectHeadPointer);
+   // }
+	//countcat = 0 ;            // ...and just like that...
+   // return 1 ;
+//}
 //}
