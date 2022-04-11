@@ -10,54 +10,61 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "reportCats.h"
-#include <stdio.h>
-
-#include "catDatabase.h"
-#include <stdlib.h>
 #include <string.h>
+#include <iostream>
+#include "Cat.h"
 
 
 
-int printCat(const int index) {
+using namespace std;
 
-    if (index < 0 || index > MAX_CAT_NUM) {
-        fprintf(stderr, "%s: animalFarm0: Bad cat [%d]\n","Animalfarm1", index);
-        return 0;
+//all commented out code is animal farm 1
 
+//int printCat(const int index) {
+   // if (index < 0 || index > MAX_CAT_NUM) {
+       //cout << "Animalfarm1: " <<  index <<  " is a Bad cat\n" << endl;
+       // return 0;
+    //}
+    //else {
+       //cout << "cat index = " << index << ", name = " << Catstruct_array[index].catname << ", gender = " << catGender(Catstruct_array[index].catgender) << ", breed = " << catBreed(Catstruct_array[index].catbreed) << ", isFixed = " << Catstruct_array[index].catfixed << ", weight = " <<  Catstruct_array[index].catweight << ", collar Color 1 = " << colorName(Catstruct_array[index].collarColor1) << ", collar Color 2 = " << colorName(Catstruct_array[index].collarColor2) << ", License = " << Catstruct_array[index].license  << endl;
+   // }
+   // return 1;
+//}
+
+int printAllCats() {
+    int countcat = 0;
+    for (Cat *iCat = catObjectHeadPointer; iCat != nullptr; iCat = iCat->next ) {
+            iCat->print();
+        countcat++;
     }
-
-    else {
-        printf("cat index = [%u], name = [%s], gender = [%s], breed = [%s], isFixed = [%d], weight = [%f], collar Color 1 = [%s], collar Color 2 = [%s], License = [%llu]\n",
-               index, Catstruct_array[index].catname, catGender(Catstruct_array[index].catgender), catBreed(Catstruct_array[index].catbreed), Catstruct_array[index].catfixed,
-               Catstruct_array[index].catweight, colorName(Catstruct_array[index].collarColor1), colorName(Catstruct_array[index].collarColor2), Catstruct_array[index].license);
-    };
-
+    cout <<"The number of cats is [" << countcat << "]" << endl;
     return 1;
 }
 
-int printAllCats(){
+   // for (int  i = 0; i < countcat; i++) {
+        //cout << "cat index = " << i << ", name = " <<Catstruct_array[i].catname << ", gender = " <<catGender(Catstruct_array[i].catgender) << ", breed = " << catBreed(Catstruct_array[i].catbreed) << ", isFixed = " <<  Catstruct_array[i].catfixed << ", weight = " <<  Catstruct_array[i].catweight << ", collar Color 1 = " << colorName(Catstruct_array[i].collarColor1) << ", collar Color 2 = " << colorName(Catstruct_array[i].collarColor2) << ", License = " <<  Catstruct_array[i].license << endl;
+    //}
+   // return 1;
 
-    for (int  i = 0; i < countcat; i++) {
-        printf("cat index = [%u], name = [%s], gender = [%s], breed = [%s], isFixed = [%d], weight = [%f], collar Color 1 = [%s], collar Color 2 = [%s], License = [%llu]\n",
-               i, Catstruct_array[i].catname, catGender(Catstruct_array[i].catgender), catBreed(Catstruct_array[i].catbreed), Catstruct_array[i].catfixed,
-               Catstruct_array[i].catweight, colorName(Catstruct_array[i].collarColor1), colorName(Catstruct_array[i].collarColor2), Catstruct_array[i].license);
-    }
-    return 1;
-}
+//}
 
-int findCat(const char* name){
-    int i = 0;
+//int findCat(const char* name){
+   // int i = 0;
+    //while (i < MAX_CAT_NUM) {
+       // if (strcmp(name, Catstruct_array[i].catname) == 0){
+            //cout << "The name of the cat is " << Catstruct_array[i].catname << endl;
+           // return i;
+        //}
+       // ++i;
+    //}
+   // return 0;
+    //}
 
-    while (i < MAX_CAT_NUM) {
-        if (strcmp(name, Catstruct_array[i].catname) == 0){
-
-            printf("The name of the cat is %s\n", Catstruct_array[i].catname);
-
-            return i;
-            exit (0);
+Cat* findCatByName(const char *name) {
+    for (Cat *iCat = catObjectHeadPointer; iCat !=nullptr; iCat->next ){
+        if(strcmp(name, iCat->getCatName())==0) {
+            return iCat;
         }
-
-        ++i;
     }
-    return 0;
+    return nullptr;
 }

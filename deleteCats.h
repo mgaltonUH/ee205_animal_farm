@@ -8,8 +8,9 @@
 /// @author Mariko Galton <mgalton@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-
-#include <stdio.h>
 #pragma once
+#include <stdio.h>
+#include "Cat.h"
 
-extern int deleteAllCats();
+//extern int deleteAllCats();
+//extern int deleteACat(Cat* deleteACat); // delete a chosen cat within the database

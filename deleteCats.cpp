@@ -11,8 +11,9 @@
 
 #include "deleteCats.h"
 #include "catDatabase.h"
+#include "Cat.h"
 
-int deleteAllCats() {
-    countcat = 0;
-    return 1;
-}
+//int deleteAllCats() {
+   // countcat = 0;
+  //  return 1;
+//}

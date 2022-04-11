@@ -10,46 +10,49 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "addCats.h"
+#include "Cat.h"
 #include "catDatabase.h"
-#include <stdio.h>
-#include "string.h"
 
+//using namespace std;
 
-
-int addCat(const char name[],const enum Gender gender,const enum Breed breed,const bool isFixed,const Weight weight, const enum Color collarcolor1, const enum Color collarcolor2, const unsigned long long license) {
-
-    if (strlen(name) >= MAX_CAT_NAME){
-        fprintf(stderr, "%s: Name of cat cannot be greater than %d letters\n", "Animalfarm1", MAX_CAT_NAME);
-        return 0;
+int addCat(Cat* newCat) {
+    if(newCat !=nullptr){
+        newCat->validate();
     }
-
-    if (strlen(name) == 0) {
-        fprintf(stderr, "Cat name must be entered\n");
-        return 0;
-    }
-
-
-    if (weight <= 0) {
-        fprintf(stderr, "Cat weight must be entered\n");
-        return 0;
-    }
-
-    if ( countcat > MAX_CAT_NUM) {
-        fprintf(stderr, "%s: Too many cats. Only %d cats can be in the database at the moment\n", "Animalfarm1", MAX_CAT_NUM);
-        return 0;
-
-    }
-
-    strncpy( Catstruct_array[countcat].catname, name, MAX_CAT_NAME);
-    Catstruct_array[countcat].catgender = gender;
-    Catstruct_array[countcat].catbreed = breed;
-    Catstruct_array[countcat].catfixed = isFixed;
-    Catstruct_array[countcat].catweight = weight;
-    Catstruct_array[countcat].collarColor1 = collarcolor1;
-    Catstruct_array[countcat].collarColor2 = collarcolor2;
-    Catstruct_array[countcat].license = license;
-
+    validateDatabase();
+    newCat->next = catObjectHeadPointer;
+    catObjectHeadPointer = newCat;
     countcat++;
+    validateDatabase();
 
     return 1;
 }
+   // if (strlen(name) >= MAX_CAT_NAME){
+      // cout << "Animalfarm1: " << "Name of cat cannot be greater than " << MAX_CAT_NAME <<  "letters\n" << endl;
+      // return 0;
+    //}
+    //if (strlen(name) == 0) {
+       // cout << "Cat name must be entered\n" << endl;
+       // return 0;
+    //}
+    //if (weight <= 0) {
+       // cout << "Cat weight must be entered\n" << endl;
+        //return 0;
+   // }
+     //if ( countcat > MAX_CAT_NUM) {
+        //cout << "Animalfarm1: " << "Too many cats. Only " << MAX_CAT_NUM <<  " cats can be in the database at the moment\n" << endl;
+       // return 0;
+   // }
+    //strncpy( Catstruct_array[countcat].catname, name, MAX_CAT_NAME);
+    //Catstruct_array[countcat].catgender = gender;
+    //Catstruct_array[countcat].catbreed = breed;
+    //Catstruct_array[countcat].catfixed = isFixed;
+    //Catstruct_array[countcat].catweight = weight;
+    //Catstruct_array[countcat].collarColor1 = collarcolor1;
+    //Catstruct_array[countcat].collarColor2 = collarcolor2;
+    //Catstruct_array[countcat].license = license;
+
+   // countcat++;
+
+    //return 1;
+//}

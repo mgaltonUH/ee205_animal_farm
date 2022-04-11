@@ -10,21 +10,22 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "catDatabase.h"
+#include "Cat.h"
 
 char           catname[MAX_CAT_NAME];
 enum           Gender catgender;               // redeclaring Gender as catgender
 enum           Breed catbreed;                 // redeclaring Breed as catbreed
-enum Color     collarColor1;
-enum Color     collarColor2;
-unsigned long long   license;
+//enum Color     collarColor1;
+//enum Color     collarColor2;
+//unsigned long long   license;
 bool           catfixed;
 Weight          catweight;
 
 NumCats            countcat = 0;       //Initializing zero as the starting poNumCats
 
-struct         Catstruct Catstruct_array[MAX_CAT_NAME];
+//struct         Catstruct Catstruct_array[MAX_CAT_NAME];
 
-const char* catGender (const enum Gender catgender) {
+const char* genderName (const enum Gender catgender) {
     switch (catgender) {
         case UNKNOWN_GENDER:
             return "Unknown_Gender";
@@ -37,7 +38,7 @@ const char* catGender (const enum Gender catgender) {
 }
 
 
-const char* catBreed (const enum Breed catbreed) {
+const char* breedName (const enum Breed catbreed) {
     switch (catbreed) {
         case UNKNOWN_BREED:
             return "Unknown_Breed";
@@ -55,21 +56,32 @@ const char* catBreed (const enum Breed catbreed) {
     return 0;
 }
 
+Cat* catObjectHeadPointer = nullptr;
 
-const char* colorName (const enum Color color) {
-    switch (color) {
-        case BLACK:
-            return "Black";
-        case WHITE:
-            return "White";
-        case RED:
-            return "Red";
-        case BLUE:
-            return "Blue";
-        case GREEN:
-            return "Green";
-        case PINK:
-            return "Pink";
+bool validateDatabase(){
+    int validCats = 0;
+    for (Cat *iCat = catObjectHeadPointer; iCat != nullptr; iCat = iCat->next ) {
+        if (!iCat->validate()) {
+            return 0;
+        }
     }
-    return 0;
+    validCats++;
 }
+
+//const char* colorName (const enum Color color) {
+    //switch (color) {
+        //case BLACK:
+            //return "Black";
+        //case WHITE:
+           // return "White";
+       // case RED:
+            //return "Red";
+        //case BLUE:
+            //return "Blue";
+       // case GREEN:
+            //return "Green";
+        //case PINK:
+           // return "Pink";
+   // }
+   // return 0;
+//}

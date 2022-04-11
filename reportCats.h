@@ -12,7 +12,11 @@
 #pragma once
 #include <stdio.h>
 #include "catDatabase.h"
+#include "Cat.h"
 
-extern int printCat(const int index);
+extern Cat* catObjectHeadPointer;
+extern Cat* findCatByName(const char* name);
+//int printCat(const int index)
 extern int printAllCats();
-extern int findCat(const char* name);
+
+

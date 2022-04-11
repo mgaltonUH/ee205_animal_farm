@@ -11,56 +11,51 @@
 /// @see     https://en.wikipedia.org/wiki/%22Hello,_World!%22_program
 /// @see     https://www.thesoftwareguild.com/blog/the-history-of-hello-world/
 ///////////////////////////////////////////////////////////////////////////////
-#include <stdio.h>
-#include <assert.h>
 
-#include "addCats.h"
+#include <iostream>
 #include "catDatabase.h"
-#include "reportCats.h"
-#include "updateCats.h"
-#include "deleteCats.h"
+#include "Cat.h"
+#include "addCats.h"
+//#include "updateCats.h"
 
+using namespace std;
 
 int main() {
-    printf("\n");
-    printf("Welcome to Animal Farm!\n");
-    printf("\n");
 
-    addCat( "Loki", MALE, PERSIAN, true, 8.5, BLACK, WHITE, 101 ) ;
-    addCat( "Milo", MALE, MANX, true, 7.0, BLACK, RED, 102 ) ;
-    addCat( "Bella", FEMALE, MAINE_COON, true, 18.2, BLACK, BLUE, 103 ) ;
-    addCat( "Kali", FEMALE, SHORTHAIR, false, 9.2, BLACK, GREEN, 104 ) ;
-    addCat( "Trin", FEMALE, MANX, true, 12.2, BLACK, PINK, 105 ) ;
-    addCat( "Chili", UNKNOWN_GENDER, SHORTHAIR, false, 19.0, WHITE, BLACK, 106 ) ;
+    cout << "\n" << endl;
+    cout << "Starting Animal Farm 2" << endl;
 
-    printAllCats();
-    printf("\n");
-    int kali = findCat( "Kali" ) ;
-    assert (updateCatName( kali, "Chili" )) ;
-    assert (printCat( kali ));
-    assert (updateCatName( kali, "Capulet" )) ;
-    assert (updateCatWeight( kali, 9.9 )) ;
-    assert (fixCat( kali )) ;
-    assert (updateCatCollar1( kali, GREEN));
-    assert (updateCatCollar2( kali, GREEN));
-    assert (updateCatLicense( kali, 201));
-    assert (printCat( kali ));
-    printf("\n");
+    addCat(new Cat("Loki", MALE, PERSIAN, 1.0 )) ;
+    addCat( new Cat("Milo", MALE, MANX, 1.1 ));
+    addCat( new Cat("Bella", FEMALE, MAINE_COON, 1.2 )) ;
+    addCat( new Cat("Kali", FEMALE, SHORTHAIR, 1.3 )) ;
+    addCat( new Cat("Trin", FEMALE, MANX, 1.4 )) ;
+    addCat( new Cat ("Chili", MALE, SHORTHAIR,1.5  )) ;
 
-    printAllCats();
+    //printAllCats();
+    //printf("\n");
+    //int kali = findCat( "Kali" ) ;
+    //assert (updateCatName( kali, "Chili" )) ;
+    //assert (printCat( kali ));
+    //assert (updateCatName( kali, "Capulet" )) ;
+    //assert (updateCatWeight( kali, 9.9 )) ;
+    //assert (fixCat( kali )) ;
+    //assert (updateCatCollar1( kali, GREEN));
+    //assert (updateCatCollar2( kali, GREEN));
+    //assert (updateCatLicense( kali, 201));
+    //assert (printCat( kali ));
 
-    deleteAllCats();
-    printAllCats();
+    //printAllCats();
+    //deleteAllCats();
+    //printAllCats();
 
-    printf("\n");
-    printf("Goodbye for Meow!\n");
-    printf("\n"
+    cout<< "Done with Animal Farm 2" << endl;
+    cout <<"\n"
            "    /\\_____/\\\n"
            "   /  o   o  \\\n"
            "  ( ==  ^  == )\n"
            "   )         (\n"
            "  (           )\n"
            " ( (  )   (  ) )\n"
-           "(__(__)___(__)__)\n ");
-    printf("\n");
+           "(__(__)___(__)__)\n " << endl;
 }
