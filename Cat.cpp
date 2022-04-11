@@ -15,6 +15,7 @@
 #include <cassert>
 #include <iomanip>
 #include <stdexcept>
+#include <cstring>
 
 using namespace std;
 
@@ -43,7 +44,7 @@ void Cat::setCatName(const char *newName) {
     validateCatName(newName);
     strcpy(catname, newName);
 }
-const char * Cat::getCatName() const {
+const char * Cat::getCatName() {
     return catname;
 }
 
@@ -118,11 +119,11 @@ bool Cat::validate() const noexcept {
 
 
 /// Format a line for printing the members of a class
-#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52);
+#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 /// @returns true if everything worked correctly.  false if something goes wrong
 
-bool Cat::print()  noexcept {
-     validate();
+bool Cat::print() noexcept {
+     assert(validate());
     cout << setw(80) << setfill( '=' ) << "" << endl ;
     cout << setfill( ' ' ) ;
     cout << left ;
@@ -130,7 +131,7 @@ bool Cat::print()  noexcept {
     FORMAT_LINE( "Cat", "name" )        << getCatName() << endl;
     FORMAT_LINE( "Cat", "gender" )      << genderName( getCatGender() ) << endl ;
     FORMAT_LINE( "Cat", "breed" )       << breedName( getCatBreed() ) << endl;
-    FORMAT_LINE( "Cat", "isFixed" )     << catfixed() << endl;
+    FORMAT_LINE( "Cat", "isFixed" )     << catfixed << endl;
     FORMAT_LINE( "Cat", "weight" )      << getCatWeight() << endl;
     return true ;
 }

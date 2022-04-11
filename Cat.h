@@ -12,6 +12,7 @@
 #include "config.h"
 #include "catDatabase.h"
 #define MAX_CAT_NAME 50
+#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 typedef float Weight;
 typedef int NumCats;
 
@@ -37,7 +38,7 @@ private:
 public:
     void setCatName(const char *newName);
 
-    const char * getCatName() const;
+    const char* getCatName();
 
     Gender getCatGender();
 

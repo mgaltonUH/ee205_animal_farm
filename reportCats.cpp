@@ -61,8 +61,8 @@ int printAllCats() {
     //}
 
 Cat* findCatByName(const char *name) {
-    for (Cat *iCat = catObjectHeadPointer; iCat !=nullptr; iCat->next ){
-        if(strcmp(name, iCat->getCatName())==0) {
+    for (Cat *iCat = catObjectHeadPointer; iCat != nullptr; iCat = iCat->next) {
+        if (strcmp(name, iCat->getCatName()) == 0) {
             return iCat;
         }
     }
