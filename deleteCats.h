@@ -12,5 +12,5 @@
 #include <stdio.h>
 #include "Cat.h"
 
-//extern int deleteAllCats();
-//extern int deleteCat(Cat* deleteACat); // delete a chosen cat within the database
+extern int deleteAllCats();
+extern int deleteACat(Cat* deleteACat); // delete a chosen cat within the database

@@ -33,8 +33,8 @@ using namespace std;
 
 int printAllCats() {
     int countcat = 0;
-    for (Cat *iCat = catObjectHeadPointer; iCat != nullptr; iCat = iCat->next ) {
-            iCat->print();
+    for (Cat *aCat = catObjectHeadPointer; aCat != nullptr; aCat = aCat->next ) {
+            aCat->print();
         countcat++;
     }
     cout <<"The number of cats is [" << countcat << "]" << endl;
@@ -61,9 +61,9 @@ int printAllCats() {
     //}
 
 Cat* findCatByName(const char *name) {
-    for (Cat *iCat = catObjectHeadPointer; iCat != nullptr; iCat = iCat->next) {
-        if (strcmp(name, iCat->getCatName()) == 0) {
-            return iCat;
+    for (Cat *aCat = catObjectHeadPointer; aCat != nullptr; aCat = aCat->next) {
+        if (strcmp(name, aCat->getCatName()) == 0) {
+            return aCat;
         }
     }
     return nullptr;

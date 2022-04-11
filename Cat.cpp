@@ -10,11 +10,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Cat.h"
-#include "catDatabase.h"
 #include <iostream>
 #include <cassert>
 #include <iomanip>
-#include <stdexcept>
 #include <cstring>
 
 using namespace std;

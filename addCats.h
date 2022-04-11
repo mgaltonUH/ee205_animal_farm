@@ -15,4 +15,4 @@
 #include "catDatabase.h"
 #include "Cat.h"
 
-extern int addCat(Cat* newCat);
+extern int addCat(Cat* aNewCat);

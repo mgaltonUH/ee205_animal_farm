@@ -17,6 +17,7 @@
 #include "Cat.h"
 #include "addCats.h"
 #include "reportCats.h"
+#include "deleteCats.h"
 //#include "updateCats.h"
 
 
@@ -34,7 +35,6 @@ int main() {
     addCat( new Cat("Trin", FEMALE, MANX, 1.4 )) ;
     addCat( new Cat ("Chili", MALE, SHORTHAIR,1.5  )) ;
 
-    printAllCats();
     //printf("\n");
     //int kali = findCat( "Kali" ) ;
     //assert (updateCatName( kali, "Chili" )) ;
@@ -48,7 +48,7 @@ int main() {
     //assert (printCat( kali ));
 
     printAllCats();
-    //deleteAllCats();
+    deleteAllCats();
     printAllCats();
 
 }

@@ -60,8 +60,8 @@ Cat* catObjectHeadPointer = nullptr;
 
 bool validateDatabase() {
     int checkCats = 0;
-    for (Cat *iCat = catObjectHeadPointer; iCat != nullptr; iCat = iCat->next) {
-        if (!iCat->validate()) {
+    for (Cat *aCat = catObjectHeadPointer; aCat != nullptr; aCat = aCat->next) {
+        if (!aCat->validate()) {
             return 0;
         }
     }

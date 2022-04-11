@@ -14,13 +14,20 @@
 #include "Cat.h"
 
 
-//int deleteCat() {
+int deleteACat(Cat* deleteACat){
+    validateDatabase();
+    if( deleteACat == catObjectHeadPointer ) {
+        catObjectHeadPointer = catObjectHeadPointer->next ;
+        delete deleteACat ;
+        countcat--;
+    }
+    return 1 ;
+}
 
-//int deleteAllCats() {
-   // while(catObjectHeadPointer != nullptr ) {
-      //  deleteCat(catObjectHeadPointer);
-   // }
-	//countcat = 0 ;            // ...and just like that...
-   // return 1 ;
-//}
-//}
+int deleteAllCats() {
+    while (catObjectHeadPointer != nullptr) {
+        deleteACat(catObjectHeadPointer);
+    }
+        countcat = 0;            // ...and just like that...
+        return 1;
+    }

@@ -15,13 +15,13 @@
 
 //using namespace std;
 
-int addCat(Cat* newCat) {
-    if(newCat !=nullptr){
-        newCat->validate();
+int addCat(Cat* aNewCat) {
+    if(aNewCat !=nullptr){
+        aNewCat->validate();
     }
     validateDatabase();
-    newCat->next = catObjectHeadPointer;
-    catObjectHeadPointer = newCat;
+    aNewCat->next = catObjectHeadPointer;
+    catObjectHeadPointer = aNewCat;
     countcat++;
     validateDatabase();
 
