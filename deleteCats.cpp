@@ -11,7 +11,7 @@
 
 #include "deleteCats.h"
 #include "catDatabase.h"
-#include "Cat.h"
+#include "Catclass.h"
 
 
 int deleteACat(Cat* deleteACat){

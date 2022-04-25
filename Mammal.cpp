@@ -1,18 +1,15 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///         University of Hawaii, College of Engineering
-/// @brief  ee205_08d_animal_farm_1_to_clion - EE 205 - Spr 2022
+/// @brief  ee205_animal_farm_3 - EE 205 - Spr 2022
 ///
-/// @file addCats.h
+/// @file Mammal.cpp
 /// @version 1.0
 ///
 /// @author Mariko Galton <mgalton@hawaii.edu>
-/// @date   20_Mar_2022
+/// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#pragma once
-#include <stdio.h>
-#include <stdbool.h>
-#include "catDatabase.h"
-#include "Catclass.h"
+#include "Mammal.h"
+#include "config.h"
 
-extern int addCat(Cat* aNewCat);
+const string Mammal::MAMMAL_NAME = "Mammilian";

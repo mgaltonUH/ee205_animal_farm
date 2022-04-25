@@ -13,42 +13,30 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
-#include "catDatabase.h"
+#include "config.h"
+#include "SinglyLinkedList.h"
 #include "Cat.h"
-#include "addCats.h"
-#include "reportCats.h"
-#include "deleteCats.h"
-//#include "updateCats.h"
-
 
 using namespace std;
 
 int main() {
+    cout << "Starting " << PROGRAM_TITLE << endl ;
 
-    cout << "\n" << endl;
-    cout << "Starting Animal Farm 2" << endl;
-
-    addCat(new Cat("Loki", MALE, PERSIAN, 1.0 )) ;
-    addCat( new Cat("Milo", MALE, MANX, 1.1 ));
-    addCat( new Cat("Bella", FEMALE, MAINE_COON, 1.2 )) ;
-    addCat( new Cat("Kali", FEMALE, SHORTHAIR, 1.3 )) ;
-    addCat( new Cat("Trin", FEMALE, MANX, 1.4 )) ;
-    addCat( new Cat ("Chili", MALE, SHORTHAIR,1.5  )) ;
-
-    //printf("\n");
-    //int kali = findCat( "Kali" ) ;
-    //assert (updateCatName( kali, "Chili" )) ;
-    //assert (printCat( kali ));
-    //assert (updateCatName( kali, "Capulet" )) ;
-    //assert (updateCatWeight( kali, 9.9 )) ;
-    //assert (fixCat( kali )) ;
-    //assert (updateCatCollar1( kali, GREEN));
-    //assert (updateCatCollar2( kali, GREEN));
-    //assert (updateCatLicense( kali, 201));
-    //assert (printCat( kali ));
-
-    printAllCats();
-    deleteAllCats();
-    printAllCats();
-
+    SinglyLinkedList catDB ;
+    catDB.push_front( new Cat( "Loki",  Color::CREAM, true,  Gender::MALE,   1.0 ) ) ;
+    catDB.push_front( new Cat( "Milo",  Color::BLACK, true,  Gender::MALE,   1.1 ) ) ;
+    catDB.push_front( new Cat( "Bella", Color::BROWN, true,  Gender::FEMALE, 1.2 ) ) ;
+    catDB.push_front( new Cat( "Kali",  Color::CALICO, true, Gender::FEMALE, 1.3 ) ) ;
+    catDB.push_front( new Cat( "Trin",  Color::WHITE, true,  Gender::FEMALE, 1.4 ) ) ;
+    catDB.insert_after(catDB.get_first(), new Cat( "Chili", Color::GINGER, true,
+                                                   Gender::MALE,   1.5 ) );
+    for( Animal* pAnimal = (Animal*)catDB.get_first() ; pAnimal != nullptr ; pAnimal = (Animal*)List::get_next( (Node*)pAnimal ) ) {
+        cout << pAnimal->speak() << endl;
+    }
+    catDB.validate() ;
+    catDB.dump() ;
+    catDB.deleteAllNodes() ;
+    catDB.dump() ;
+    cout << "Done with " << PROGRAM_TITLE ;
+    return( EXIT_SUCCESS ) ;
 }

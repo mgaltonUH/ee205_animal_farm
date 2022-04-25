@@ -12,7 +12,7 @@
 #pragma once
 #include <stdio.h>
 #include "catDatabase.h"
-#include "Cat.h"
+#include "Catclass.h"
 
 extern Cat* catObjectHeadPointer;
 extern Cat* findCatByName(const char* name);

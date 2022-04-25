@@ -12,7 +12,7 @@
 #include "reportCats.h"
 #include <string.h>
 #include <iostream>
-#include "Cat.h"
+#include "Catclass.h"
 
 
 

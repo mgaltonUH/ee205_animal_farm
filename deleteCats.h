@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 #include <stdio.h>
-#include "Cat.h"
+#include "Catclass.h"
 
 extern int deleteAllCats();
 extern int deleteACat(Cat* deleteACat); // delete a chosen cat within the database

@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-#include "Cat.h"
+#include "Catclass.h"
 //#define MAX_CAT_NAME 50
 
 //enum Gender {UNKNOWN_GENDER, MALE, FEMALE};

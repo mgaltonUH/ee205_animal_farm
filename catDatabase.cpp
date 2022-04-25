@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "catDatabase.h"
-#include "Cat.h"
+#include "Catclass.h"
 
 char           catname[MAX_CAT_NAME];
 enum           Gender catgender;               // redeclaring Gender as catgender

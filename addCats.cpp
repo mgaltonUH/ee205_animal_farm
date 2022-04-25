@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "addCats.h"
-#include "Cat.h"
+#include "Catclass.h"
 #include "catDatabase.h"
 
 //using namespace std;
