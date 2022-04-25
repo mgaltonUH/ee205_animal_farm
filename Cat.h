@@ -32,11 +32,11 @@ public:
     Cat(const std::string &newName, const Color newColor, const bool newIsFixed, const Gender newGender, const Weight::t_weight newWeight);
 public:
     std::string getName() const noexcept;
-    void setName(const std::string &newName);
+    void setName(const std::string& newName);
     bool isFixed() const noexcept;
     void fixCat() noexcept;
 public:
-    std::string speak() const noexcept override;
+    std::string speak() const noexcept;   //Cat to say Meow
     void dump() const noexcept override;
     bool validate() const noexcept override;
 public:

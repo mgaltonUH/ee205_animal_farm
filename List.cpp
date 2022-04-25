@@ -11,3 +11,20 @@
 
 #include "List.h"
 #include "config.h"
+
+bool List::empty() const noexcept {
+    if(head != nullptr) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+unsigned int List::size() const noexcept {
+    return count;  // initialized in .h file...so the function already "gets" it...just return
+}
+
+bool List::isIn(Node* aNode) const {
+
+}

@@ -17,23 +17,24 @@ using namespace std;
 SinglyLinkedList::SinglyLinkedList() {
 };
 
-void SinglyLinkedList::push_front(Node *newNode) {
+void SinglyLinkedList::push_front(Node *newNode) {  // in Node.h....Node* next = nullptr
     if(newNode == nullptr) {
         throw invalid_argument("Invalid argument: the newNode cannot be equal to nullptr");
     }
-    if(newNode != nullptr) {
+    if( head != nullptr) {
         throw domain_error("Domain error: the newNode is not in the correct domain");
     }
-
+    if(head = newNode) {
+        newNode -> next = nullptr;
     }
-}
-
+};
 
 Node* SinglyLinkedList::pop_front() noexcept {
-
 }
 
-void insert_after(Node *currentNode, Node *newNode);
+void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
+
+}
 
 void dump() const noexcept;
 bool validate() const noexcept;

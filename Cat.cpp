@@ -9,11 +9,11 @@
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include "Cat.h"
-#include "config.h"
-
 #include <iostream>
 #include <iomanip>
+
+#include "Cat.h"
+#include "config.h"
 
 using namespace std;
 
@@ -21,7 +21,18 @@ using namespace std;
  const Weight::t_weight Cat::MAX_WEIGHT = 40;
 
 string Cat::getName() const noexcept{
-    return
+    return name;
+}
+
+void Cat::setName(const string& newName) {
+    if(validateName(newName)) {
+    throw invalid_argument("Cat needs a name that is not empty");
+    }
+    name = newName;
+}
+
+bool Cat::isFixed() const noexcept {
+return isCatFixed;
 }
 
  std::string Cat::speak() const noexcept {

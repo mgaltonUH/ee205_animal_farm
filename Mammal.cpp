@@ -11,5 +11,9 @@
 
 #include "Mammal.h"
 #include "config.h"
-
+#include <string>
 const string Mammal::MAMMAL_NAME = "Mammilian";
+
+void Mammal::dump() const noexcept {
+    Animal::dump();
+}

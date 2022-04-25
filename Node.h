@@ -23,11 +23,10 @@ protected:
     Node* next = nullptr;
 public:
     virtual void dump() const;  // should print out sample output
-
     virtual bool validate() const noexcept;
-
+    virtual bool operator>(const Node &rightSide);
 protected:
     static bool compareByAddress(const Node *node1, const Node *node2);
 
-    virtual bool operator>(const Node &rightSide);
+
 };

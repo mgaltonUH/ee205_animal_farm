@@ -19,7 +19,7 @@ protected:
 public:
     bool empty() const noexcept;
     unsigned int size() const noexcept;
-    bool isIn(Node * aNode) const;
+    bool isIn(Node* aNode) const;
     bool isSorted() const noexcept;
 
     Node* get_first() const noexcept;
