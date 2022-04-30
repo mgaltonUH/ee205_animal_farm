@@ -8,9 +8,8 @@
 /// @author Mariko Galton <mgalton@hawaii.edu>
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
 
-#ifndef EE205_ANIMAL_FARM_3_CAT_H
-#define EE205_ANIMAL_FARM_3_CAT_H
 #include <iostream>
 #include <cassert>
 #include <iomanip>
@@ -28,8 +27,15 @@ protected:
     std::string name;
     bool isCatFixed;
 public:
-    Cat(const std::string &newName);
-    Cat(const std::string &newName, const Color newColor, const bool newIsFixed, const Gender newGender, const Weight::t_weight newWeight);
+    explicit Cat(const std::string &newName) : Mammal (MAX_WEIGHT, SPECIES_NAME) {
+        name = newName;
+        isCatFixed = false;
+    }
+    Cat(const std::string &newName, const Color newColor, const bool newIsFixed, const Gender newGender, const Weight::t_weight newWeight)
+        : Mammal (newColor, newGender, newWeight, MAX_WEIGHT, SPECIES_NAME ) {
+        name = newName;
+        isCatFixed = newIsFixed;
+    }
 public:
     std::string getName() const noexcept;
     void setName(const std::string& newName);
@@ -45,4 +51,3 @@ public:
 };
 
 
-#endif //EE205_ANIMAL_FARM_3_CAT_H

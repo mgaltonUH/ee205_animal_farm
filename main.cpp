@@ -16,6 +16,9 @@
 #include "config.h"
 #include "SinglyLinkedList.h"
 #include "Cat.h"
+#include "Mammal.h"
+#include "Animal.h"
+
 
 using namespace std;
 

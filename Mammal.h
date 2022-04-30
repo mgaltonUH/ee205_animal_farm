@@ -8,6 +8,7 @@
 /// @author Mariko Galton <mgalton@hawaii.edu>
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#pragma once
 #include <iostream>
 #include <cassert>
 #include <iomanip>

@@ -8,7 +8,7 @@
 /// @author Mariko Galton <mgalton@hawaii.edu>
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+#pragma once
 #include <iostream>
 #include <cassert>
 #include <iomanip>
@@ -18,10 +18,6 @@
 #include "Weight.h"
 #include "config.h"
 #include "Gender.h"
-
-
-#ifndef EE205_ANIMAL_FARM_2_ANIMAL_H
-#define EE205_ANIMAL_FARM_2_ANIMAL_H
 
 using namespace std;
 
@@ -35,7 +31,26 @@ private:
     Weight weight;
 public:
     Animal(const Weight::t_weight newMaxWeight, const std::string &newClassification, const std::string &newSpecies);
+    Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight, const std::string& newClassification, const std::string& newSpecies);
+
+public:
+    std::string getKingdom() const noexcept;
+    std::string getClassification() const noexcept;
+    std::string getSpecies() const noexcept;
+
+public:
+    Gender getGender() const noexcept;
+    Weight::t_weight getWeight() const noexcept;
+    void setWeight(const Weight::t_weight newWeight);
+public:
+    virtual std::string speak() const noexcept=0;
+    void dump() const noexcept override;
+    bool validate() const noexcept override;
+public:
+    static bool validateClassification(const std::string& checkClassification) noexcept;
+    static bool validateSpecies(const std::string& checkSpecies) noexcept;
+
+protected:
+    void setGender(const Gender newGender);
 };
 
-
-#endif //EE205_ANIMAL_FARM_2_ANIMAL_H

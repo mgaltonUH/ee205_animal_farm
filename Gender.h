@@ -8,30 +8,17 @@
 /// @author Mariko Galton <mgalton@hawaii.edu>
 /// @date   24_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+#pragma once
 #include <string.h>
 #include <iostream>
 #include "config.h"
 
-
 using namespace std;
-/// A gender... for educational use only.  This is not intended to be
-/// inclusive of all possible genders
+
 enum class Gender {
-    UNKNOWN_GENDER=0
-    ,MALE
-    ,FEMALE
+    UNKNOWN_GENDER, MALE, FEMALE
 };
 
-/// Output Gender as a formatted string
-///
-/// @param lhs_stream The output stream to write to (usually `cout`).  `
-///                   `lhs` stands for Left Hand Side and means the left side
-///                   of the `<<` operator.
-/// @param rhs_Gender The Gender to output.
-///                   `rhs` stands for Right Hand Side and means the right
-///                   side of the `<<` operator.
-/// @return `Unknown gender`, `Female` or `Male`.
 inline std::ostream& operator<<( std::ostream& lhs_stream, const Gender& rhs_Gender ){
     switch( rhs_Gender ) {
         case Gender::UNKNOWN_GENDER:

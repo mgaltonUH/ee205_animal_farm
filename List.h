@@ -8,7 +8,7 @@
 /// @author Mariko Galton <mgalton@hawaii.edu>
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-#pragma once
+
 #include "Node.h"
 #include "config.h"
 

@@ -13,7 +13,6 @@
 #include <ostream>
 #include "config.h"
 
-typedef float t_weight;
 
 enum UnitOfWeight{POUND, KILO, SLUG}; //public type
 
@@ -23,6 +22,7 @@ static const std::string SLUG_LABEL = "Slug" ;
 
 class Weight {
 public:
+    typedef float t_weight;
     static const t_weight UNKNOWN_WEIGHT;
     static const t_weight KILOS_IN_A_POUND;
     static const t_weight SLUGS_IN_A_POUND ;
@@ -68,7 +68,7 @@ public: // public member functions
     Weight (UnitOfWeight newUnitOfWeight, t_weight newMaxWeight);
     Weight (t_weight newWeight, UnitOfWeight newUnitOfWeight, t_weight newMaxWeight);
 
-private: //private member function
+public: //private member function
     void setMaxWeight (t_weight newMaxWeight);
 
 };

@@ -8,9 +8,9 @@
 /// @author Mariko Galton <mgalton@hawaii.edu>
 /// @date   21_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-
-#include "List.h"
+#pragma once
 #include "Node.h"
+#include "List.h"
 #include "config.h"
 
 
